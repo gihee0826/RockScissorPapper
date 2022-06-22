@@ -28,15 +28,13 @@ function App() {
   const play = (userChoice) => {
     setUserSelect(choice[userChoice])
     let computerChoice = randomChoice()
-    setComputerSelect(computerChoice);
   };
 
   const randomChoice = () => {
-    let itemArray = Object.keys(choice); //객페에 키값만 뽑아서 배열로 만들어 주는 함수
-    console.log("itemArray", itemArray)
-    let randomItem = Math.floor(Math.random() * itemArray.length);
-    let final = itemArray[randomItem];
-    return choice[final];
+    let itemArray = Object.keys(choice);
+    console.log("itemArray",itemArray)
+    let randomItem = Math.random()
+    console.log("randomItem", randomItem)
   }
   return (
     <div>

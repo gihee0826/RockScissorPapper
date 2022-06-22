@@ -17,32 +17,25 @@ const choice = {
     name: "Scissor",
     img: "https://static.vecteezy.com/system/resources/previews/003/240/783/original/scissor-illustration-in-flat-design-vector.jpg"
   },
-  papper: {
+  paper: {
     name: "Papper",
-    img: "https://thumbs.dreamstime.com/b/lined-letter-paper-511157.jpg"
+    img: 'https://png.pngtree.com/element_our/20190604/ourmid/pngtree-cartoon-note-paper-pattern-illustration-image_1469684.jpg'
   }
 }
 function App() {
   const [userSelect, setUserSelect] = useState(null)
-  const [computerSelect, setComputerSelect] = useState(null)
+
   const play = (userChoice) => {
     setUserSelect(choice[userChoice])
-    let computerChoice = randomChoice()
-    setComputerSelect(computerChoice);
+
+    console.log("choice", userChoice)
   };
 
-  const randomChoice = () => {
-    let itemArray = Object.keys(choice); //객페에 키값만 뽑아서 배열로 만들어 주는 함수
-    console.log("itemArray", itemArray)
-    let randomItem = Math.floor(Math.random() * itemArray.length);
-    let final = itemArray[randomItem];
-    return choice[final];
-  }
   return (
     <div>
       <div className='main'>
         <Box title='You' item={userSelect} />
-        <Box title='Computer' item={computerSelect} />
+        {/* <Box title='Computer' item={userSelect}  /> */}
       </div>
       <div className='main'>
         <button onClick={() => play('scissor')}>가위</button>
