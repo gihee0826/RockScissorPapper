@@ -17,8 +17,8 @@ const choice = {
     name: "Scissor",
     img: "https://static.vecteezy.com/system/resources/previews/003/240/783/original/scissor-illustration-in-flat-design-vector.jpg"
   },
-  paper: {
-    name: "Paper",
+  papper: {
+    name: "Papper",
     img: "https://thumbs.dreamstime.com/b/lined-letter-paper-511157.jpg"
   }
 }
@@ -71,7 +71,7 @@ return (
     <div className='main'>
       <button onClick={() => play('scissor')}>가위</button>
       <button onClick={() => play('rock')}>바위</button>
-      <button onClick={() => play('paper')}>보</button>
+      <button onClick={() => play('papper')}>보</button>
     </div>
   </div>
 );

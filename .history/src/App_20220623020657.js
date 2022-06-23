@@ -17,22 +17,21 @@ const choice = {
     name: "Scissor",
     img: "https://static.vecteezy.com/system/resources/previews/003/240/783/original/scissor-illustration-in-flat-design-vector.jpg"
   },
-  paper: {
-    name: "Paper",
+  papper: {
+    name: "Papper",
     img: "https://thumbs.dreamstime.com/b/lined-letter-paper-511157.jpg"
   }
 }
 function App() {
   const [userSelect, setUserSelect] = useState(null);
   const [computerSelect, setComputerSelect] = useState(null);
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState('');
   const play = (userChoice) => {
     setUserSelect(choice[userChoice])
     let computerChoice = randomChoice()
     setComputerSelect(computerChoice);
     setResult(judgement(choice[userChoice], computerChoice));
   };
-  
   const judgement = (user, computer) => {
     console.log("user", user, "computer", computer)
     // user == computer tie
@@ -54,7 +53,7 @@ function App() {
       return computer.name == "Rock" ?  "win" :  'lose'
   
   }
-
+}
 const randomChoice = () => {
   let itemArray = Object.keys(choice); //객페에 키값만 뽑아서 배열로 만들어 주는 함수
   console.log("itemArray", itemArray)
@@ -66,15 +65,15 @@ return (
   <div>
     <div className='main'>
       <Box title='You' item={userSelect} result={result} />
-      <Box title='Computer' item={computerSelect} result={result} />
+      <Box title='Computer' item={computerSelect} />
     </div>
     <div className='main'>
       <button onClick={() => play('scissor')}>가위</button>
       <button onClick={() => play('rock')}>바위</button>
-      <button onClick={() => play('paper')}>보</button>
+      <button onClick={() => play('papper')}>보</button>
     </div>
   </div>
 );
-}
+
 
 export default App;
